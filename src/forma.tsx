@@ -14,7 +14,6 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Input,
 } from "@nextui-org/react";
 const Forma = () => {
   return (
@@ -50,139 +49,215 @@ const Forma = () => {
     <Table aria-label="Example static collection table" className="">
       <TableHeader>
         <TableColumn>
-          <img className="w-12" src={img1} alt="" />
+          <img className="w-12 m-auto" src={img1} alt="" />
         </TableColumn>
         <TableColumn>
-          <img className="w-12" src={img2} alt="" />
+          <img className="w-12 m-auto" src={img2} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img3} alt="" />
+          <img className="w-24 m-auto" src={img3} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img4} alt="" />
+          <img className="w-12 m-auto" src={img4} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img5} alt="" />
+          <img className="w-24 m-auto" src={img5} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img6} alt="" />
+          <img className="w-24  m-auto" src={img6} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img7} alt="" />
+          <img className="w-24  m-auto" src={img7} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img8} alt="" />
+          <img className="w-24  m-auto" src={img8} alt="" />
         </TableColumn>
         <TableColumn>
-          <img src={img9} alt="" />
+          <img className="w-24  m-auto" src={img9} alt="" />
         </TableColumn>
       </TableHeader>
+
       <TableBody>
-        <TableRow key="1">
+        {/* Строка 1  */}
+        <TableRow key="1" className="">
           <TableCell>
-            {/* <input className="bg-slate-300 rounded-md" type="text" placeholder="" /> */}
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell rowSpan={7}>0</TableCell>
+          <TableCell>0</TableCell>
+          <TableCell rowSpan={7}>0</TableCell>
+          <TableCell rowSpan={7}>0</TableCell>
+          <TableCell rowSpan={7}>0</TableCell>
         </TableRow>
+
+        {/* Строка 2  */}
         <TableRow key="2">
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Paused</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>0</TableCell>
+          <TableCell className="hidden">Active</TableCell>
+          <TableCell className="hidden">Tony Reichert</TableCell>
+          <TableCell className="hidden">CEO</TableCell>
+          <TableCell className="hidden">Active</TableCell>
         </TableRow>
+
+        {/* Строка 3  */}
         <TableRow key="3">
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>0</TableCell>
+          <TableCell className="hidden">Active</TableCell>
+          <TableCell className="hidden">Tony Reichert</TableCell>
+          <TableCell className="hidden">CEO</TableCell>
+          <TableCell className="hidden">Active</TableCell>
         </TableRow>
+
+        {/* Строка 4  */}
         <TableRow key="4">
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>0</TableCell>
+          <TableCell className="hidden">Active</TableCell>
+          <TableCell className="hidden">Tony Reichert</TableCell>
+          <TableCell className="hidden">CEO</TableCell>
+          <TableCell className="hidden">Active</TableCell>
         </TableRow>
+
+        {/* Строка 5  */}
         <TableRow key="5">
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>0</TableCell>
+          <TableCell className="hidden">Active</TableCell>
+          <TableCell className="hidden">Tony Reichert</TableCell>
+          <TableCell className="hidden">CEO</TableCell>
+          <TableCell className="hidden">Active</TableCell>
         </TableRow>
+
+        {/* Строка 6  */}
         <TableRow key="6">
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>0</TableCell>
+          <TableCell className="hidden">Active</TableCell>
+          <TableCell className="hidden">Tony Reichert</TableCell>
+          <TableCell className="hidden">CEO</TableCell>
+          <TableCell className="hidden">Active</TableCell>
         </TableRow>
+        {/* Строка 7  */}
         <TableRow key="7">
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <Input></Input>
+            <input className="bg-slate-200 w-20"></input>
           </TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
+            {" "}
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>0</TableCell>
+
+          <TableCell className="hidden">Active</TableCell>
+          <TableCell className="hidden">Tony Reichert</TableCell>
+          <TableCell className="hidden">CEO</TableCell>
+          <TableCell className="hidden">Active</TableCell>
         </TableRow>
       </TableBody>
     </Table>
