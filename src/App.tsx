@@ -7,7 +7,6 @@ import {
   Button,
 } from "@nextui-org/react";
 import "./App.css";
-import Fjkd from "./fjkd";
 import About from "./about";
 import Contact from "./contact";
 import { Progress } from "@nextui-org/progress";
@@ -94,7 +93,7 @@ function App() {
             </>
           }
         />
-        <Route path="/form" element={<Fjkd />} />
+        {/* <Route path="/form" element={<Fjkd />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
