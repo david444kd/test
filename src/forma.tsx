@@ -17,35 +17,6 @@ import {
 } from "@nextui-org/react";
 const Forma = () => {
   return (
-    // <div className="grid grid-cols-9 justify-center items-center text-center border-1 border-solid  border-black">
-    //   <div>
-    //     <img src={img1} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img2} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img3} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img4} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img5} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img6} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img7} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img8} alt="" />
-    //   </div>
-    //   <div>
-    //     <img src={img9} alt="" />
-    //   </div>
-    // </div>
     <Table aria-label="Example static collection table" className="">
       <TableHeader>
         <TableColumn>
@@ -92,16 +63,36 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell rowSpan={7}>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell>
             {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell rowSpan={7}>0</TableCell>
-          <TableCell>0</TableCell>
-          <TableCell rowSpan={7}>0</TableCell>
-          <TableCell rowSpan={7}>0</TableCell>
-          <TableCell rowSpan={7}>0</TableCell>
+          <TableCell rowSpan={7}>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell rowSpan={7}>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
+          <TableCell rowSpan={7}>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
         </TableRow>
 
         {/* Строка 2  */}
@@ -118,12 +109,15 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell>0</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
           <TableCell className="hidden">Active</TableCell>
           <TableCell className="hidden">Tony Reichert</TableCell>
           <TableCell className="hidden">CEO</TableCell>
@@ -144,12 +138,15 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell>0</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
           <TableCell className="hidden">Active</TableCell>
           <TableCell className="hidden">Tony Reichert</TableCell>
           <TableCell className="hidden">CEO</TableCell>
@@ -170,12 +167,15 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell>0</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
           <TableCell className="hidden">Active</TableCell>
           <TableCell className="hidden">Tony Reichert</TableCell>
           <TableCell className="hidden">CEO</TableCell>
@@ -196,12 +196,15 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell>0</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
           <TableCell className="hidden">Active</TableCell>
           <TableCell className="hidden">Tony Reichert</TableCell>
           <TableCell className="hidden">CEO</TableCell>
@@ -222,12 +225,15 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell>0</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
           <TableCell className="hidden">Active</TableCell>
           <TableCell className="hidden">Tony Reichert</TableCell>
           <TableCell className="hidden">CEO</TableCell>
@@ -247,12 +253,15 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            {" "}
             <label htmlFor="" className="px-10">
               0
             </label>
           </TableCell>
-          <TableCell>0</TableCell>
+          <TableCell>
+            <label htmlFor="" className="px-10">
+              0
+            </label>
+          </TableCell>
 
           <TableCell className="hidden">Active</TableCell>
           <TableCell className="hidden">Tony Reichert</TableCell>

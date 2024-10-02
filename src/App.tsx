@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <div>
-        <header className="flex justify-between w-full items-center bg-gray-100">
+        <header className="flex h-14 justify-between w-full items-center bg-gray-100">
           <div>
             <Dropdown>
               <DropdownTrigger>
