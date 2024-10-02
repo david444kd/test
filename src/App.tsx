@@ -1,81 +1,103 @@
-import { Link as RouterLink, Routes, Route } from 'react-router-dom';
-import { Link, DropdownMenu, Dropdown, DropdownItem, DropdownTrigger, Button, Image, Select, SelectItem } from '@nextui-org/react';
-import './App.css';
-import Fjkd from './fjkd';
-import About from './about';
-import Contact from './contact';
-
+import { Link as RouterLink, Routes, Route } from "react-router-dom";
+import {
+  DropdownMenu,
+  Dropdown,
+  DropdownItem,
+  DropdownTrigger,
+  Button,
+} from "@nextui-org/react";
+import "./App.css";
+import Fjkd from "./fjkd";
+import About from "./about";
+import Contact from "./contact";
+import { Progress } from "@nextui-org/progress";
+import { useState } from "react";
+import Forma from "./forma";
 function App() {
-  const animals = [
-    { key: 'type1', label: 'type1' },
-    { key: 'type2', label: 'type2' },
-    { key: 'type3', label: 'type3' },
-    { key: 'type4', label: 'type4' },
-    { key: 'type5', label: 'type5' },
-  ];
+  const [right, setRight] = useState(50);
+  const [left, setLeft] = useState(50);
 
+  function upGrade() {
+    setRight(right + Math.floor(Math.random() * 5));
+    setLeft(left - Math.floor(Math.random() * 5));
+  }
   return (
     <div>
-      <header className='flex justify-between items-center border-b bg-gray-100'>
-        <Dropdown>
-          <DropdownTrigger>
-            <Button variant="bordered" className='ml-10'>
-              Menu
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Example with disabled actions" disabledKeys={['edit', 'delete']}>
-            <DropdownItem key="first">First</DropdownItem>
-            <DropdownItem key="second">Second</DropdownItem>
-            <DropdownItem key="third">Third</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <nav>
-          <ul className='flex m-10'>
-            <li> <Link className='text-gray-700' as={RouterLink} to='/'>Home</Link> </li>
-            <li> <Link className='pl-10 text-gray-700' as={RouterLink} to='/form'>Form</Link> </li>
-            <li> <Link className='text-gray-700 pl-10' as={RouterLink} to='/about'>About</Link> </li>
-            <li> <Link className='pl-10 text-gray-700' as={RouterLink} to='/contact'>Contact</Link> </li>
-          </ul>
-        </nav>
-      </header>
-
-      <main className='p-10'>
-        <Routes>
-          <Route path="/" element={
+      <div>
+        <header className="flex justify-between w-full items-center bg-gray-100">
+          <div>
+            <Dropdown>
+              <DropdownTrigger>
+                <Button variant="bordered" className="ml-[5%]" size="sm">
+                  Menu
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                aria-label="Example with disabled actions"
+                disabledKeys={["edit", "delete"]}
+              >
+                <DropdownItem key="first">First</DropdownItem>
+                <DropdownItem key="second">Second</DropdownItem>
+                <DropdownItem key="third">Third</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+          <div className="flex gap-[10%] mr-[10%]">
             <div>
-              <div className='flex justify-center'>
-                <h1 className='m-10 text-2xl font-bold text-gray-700'>Items List</h1>
-              </div>
-              <div className='flex flex-col items-center'>
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className='flex items-center justify-between mb-10 w-full max-w-2xl'>
-                    <Image
-                      isZoomed
-                      width={200}
-                      alt={`productImage${item}`}
-                      src="https://www.zadroagency.com.au/wp-content/uploads/2014/11/Blog44_Web-1920x1080-1-1024x576.png"
-                    />
-                    <div className='m-10'> <p className='font-mono'>Товар {item}</p></div>
-                    <div className='w-48'>
-                      <Select
-                        items={animals}
-                        label="product types"
-                        placeholder="select type"
-                        className="w-full"
-                      >
-                        {(animal) => <SelectItem key={animal.label}>{animal.label}</SelectItem>}
-                      </Select>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <RouterLink to="/">Home</RouterLink>
             </div>
-          }/>
-          <Route path="/form" element={<Fjkd />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+            <div>
+              <RouterLink to="/about">About</RouterLink>
+            </div>
+            <div>
+              <RouterLink to="/contact">Info</RouterLink>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="grid grid-cols-2  h-[90vw] items-center justify-center">
+                <div className="-rotate-90 mt-[30%]">
+                  {/* className="flex justify-center mb-10 w-9/12 lg:w-1/5" */}
+                  <Progress
+                    aria-label="Loading..."
+                    value={left}
+                    className="max-w-xs"
+                  />
+                  <p className="rotate-90 text-center">{left}</p>
+                </div>
+                <div className="-rotate-90 mt-[30%]">
+                  <p className="rotate-90 text-center">{right}</p>
+                  <Progress
+                    aria-label="Loading..."
+                    value={right}
+                    className="max-w-xs"
+                  />
+                </div>
+                <div className="col-span-2 justify-center flex">
+                  {/* className="mt-20" */}
+                  <Button color="primary" onClick={upGrade}>
+                    Насос
+                  </Button>
+                  {/* <div>
+                  <p>{left}</p>
+                  <p>{right}</p>
+                </div> */}
+                </div>
+              </div>
+              <Forma></Forma>
+            </>
+          }
+        />
+        <Route path="/form" element={<Fjkd />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
