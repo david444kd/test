@@ -21,6 +21,7 @@ import Forma from "./forma";
 function App() {
   const { isOpen, onOpenChange } = useDisclosure();
   const [info, setInfo] = useState(false);
+  const [read, setRead] = useState(false);
   const [right, setRight] = useState(50);
   const [left, setLeft] = useState(50);
   useEffect(() => {
@@ -162,20 +163,29 @@ function App() {
                   />
                 </div>
                 <div className="col-span-2 justify-center flex flex-col w-[50%] m-auto gap-4">
-                  <div className="flex m-auto gap-3">
-                    <Button color="primary" onClick={upGrade} className="w-1/2">
-                      Насос
-                    </Button>
-                    <Button
-                      onClick={sbros}
-                      className="bg-gray-400 border w-1/2"
-                    >
-                      Клапан
-                    </Button>
-                  </div>
+                  {read && (
+                    <div className="flex m-auto gap-3">
+                      <Button
+                        color="primary"
+                        onClick={upGrade}
+                        className="w-1/2"
+                      >
+                        Насос
+                      </Button>
+                      <Button
+                        onClick={sbros}
+                        className="bg-gray-400 border w-1/2"
+                      >
+                        Клапан
+                      </Button>
+                    </div>
+                  )}
                   <Button
                     variant="shadow"
-                    onClick={() => setInfo(true)}
+                    onClick={() => {
+                      setInfo(true);
+                      setRead(true);
+                    }}
                     className="bg-orange-500"
                   >
                     Прочитать инструкции
