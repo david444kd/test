@@ -15,36 +15,46 @@ import {
   TableRow,
   TableCell,
 } from "@nextui-org/react";
+import Formula1 from "./images/formula1";
+import Formula2 from "./images/formula2";
+import Formula3 from "./images/formula3";
+import Formula4 from "./images/formula4";
+import Formula5 from "./images/formula5";
+import Formula6 from "./images/formula6";
+import Formula7 from "./images/formula7";
+import Formula8 from "./images/formula8";
+import Formula9 from "./images/formula9";
+
 const Forma = () => {
   return (
     <Table aria-label="Example static collection table" className="">
       <TableHeader>
         <TableColumn>
-          <img className="w-12 m-auto" src={img1} alt="" />
+          <Formula1></Formula1>
         </TableColumn>
         <TableColumn>
-          <img className="w-12 m-auto" src={img2} alt="" />
+          <Formula2></Formula2>
         </TableColumn>
         <TableColumn>
-          <img className="w-24 m-auto" src={img3} alt="" />
+          <Formula3></Formula3>
         </TableColumn>
         <TableColumn>
-          <img className="w-12 m-auto" src={img4} alt="" />
+          <Formula4></Formula4>
         </TableColumn>
         <TableColumn>
-          <img className="w-24 m-auto" src={img5} alt="" />
+          <Formula5></Formula5>
         </TableColumn>
         <TableColumn>
-          <img className="w-24  m-auto" src={img6} alt="" />
+          <Formula6></Formula6>
         </TableColumn>
         <TableColumn>
-          <img className="w-24  m-auto" src={img7} alt="" />
+          <Formula7></Formula7>
         </TableColumn>
         <TableColumn>
-          <img className="w-24  m-auto" src={img8} alt="" />
+          <Formula8></Formula8>
         </TableColumn>
         <TableColumn>
-          <img className="w-24  m-auto" src={img9} alt="" />
+          <Formula9></Formula9>
         </TableColumn>
       </TableHeader>
 

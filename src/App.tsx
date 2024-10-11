@@ -7,6 +7,7 @@ import {
   Modal,
   useDisclosure,
   Button,
+  Card,
 } from "@nextui-org/react";
 import ReactPlayer from "react-player";
 import "./App.css";
@@ -17,6 +18,7 @@ import { useState, useEffect } from "react";
 import Forma from "./forma";
 function App() {
   const { isOpen, onOpenChange } = useDisclosure();
+  const [info, setInfo] = useState(false);
   const [right, setRight] = useState(50);
   const [left, setLeft] = useState(50);
   useEffect(() => {
@@ -26,6 +28,10 @@ function App() {
   function upGrade() {
     setRight(right + Math.floor(Math.random() * 5));
     setLeft(left - Math.floor(Math.random() * 5));
+  }
+  function sbros() {
+    setRight(Math.floor(Math.random() * (56 - 52) + 52));
+    setLeft(Math.floor(Math.random() * (48 - 43) + 43));
   }
   return (
     <div>
@@ -102,6 +108,31 @@ function App() {
           path="/"
           element={
             <>
+              {info && (
+                <div className="absolute w-screen h-screen z-50 bg-default-100">
+                  <Card className="p-8 top-[10%] m-4 py-10">
+                    <div className="flex flex-col gap-4 mb-2">
+                      <h1 className="text-xl">Подготовка к эксперименту:</h1>
+                      <p className="text-default-600">
+                        Перед началом работы убедитесь, что параметры установки
+                        находятся на исходных значениях, которые отображаются в
+                        соответствующих полях интерфейса.
+                      </p>
+                      <h1 className="text-xl">Нагнетание давления:</h1>
+                      <p className="text-default-600">
+                        Нажмите кнопку "Насос" для увеличения давления в
+                        системе.
+                      </p>
+                      <p className="text-default-600">
+                        Как только достигнуто нужное давление, остановите
+                        накачку и запишите разницу колен монометра в таблицу
+                      </p>
+                    </div>
+                    <Button onClick={() => setInfo(false)}>Готово</Button>
+                  </Card>
+                </div>
+              )}
+
               <div className="flex justify-center">
                 <ReactPlayer
                   light
@@ -128,13 +159,28 @@ function App() {
                     className="max-w-xs"
                   />
                 </div>
-                <div className="col-span-2 justify-center flex">
-                  <Button color="primary" onClick={upGrade}>
-                    Насос
+                <div className="col-span-2 justify-center flex flex-col w-[50%] m-auto gap-4">
+                  <div className="flex m-auto gap-3">
+                    <Button color="primary" onClick={upGrade} className="w-1/2">
+                      Насос
+                    </Button>
+                    <Button
+                      onClick={sbros}
+                      className="bg-gray-400 border w-1/2"
+                    >
+                      Клапан
+                    </Button>
+                  </div>
+                  <Button
+                    variant="shadow"
+                    onClick={() => setInfo(true)}
+                    className="bg-orange-500"
+                  >
+                    Прочитать инструкции
                   </Button>
                 </div>
               </div>
-              <Forma></Forma>
+              {!info && <Forma></Forma>}
             </>
           }
         />
