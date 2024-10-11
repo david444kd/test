@@ -192,7 +192,7 @@ function App() {
                   </Button>
                 </div>
               </div>
-              {!info && <Forma></Forma>}
+              {read && <Forma></Forma>}
             </>
           }
         />
