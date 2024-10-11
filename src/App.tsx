@@ -9,7 +9,9 @@ import {
   Button,
   Card,
 } from "@nextui-org/react";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
+
 import "./App.css";
 import About from "./about";
 import Contact from "./contact";
