@@ -53,10 +53,10 @@ const Forma = () => {
         {/* Строка 1  */}
         <TableRow key="1" className="">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -64,34 +64,34 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell rowSpan={7}>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
             {" "}
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell rowSpan={7}>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell rowSpan={7}>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell rowSpan={7}>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
         </TableRow>
@@ -99,15 +99,10 @@ const Forma = () => {
         {/* Строка 2  */}
         <TableRow key="2">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
-          </TableCell>
-          <TableCell>
-            <label htmlFor="" className="px-10">
-              0
-            </label>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -115,8 +110,13 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
+            </label>
+          </TableCell>
+          <TableCell>
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell className="hidden">Active</TableCell>
@@ -128,15 +128,10 @@ const Forma = () => {
         {/* Строка 3  */}
         <TableRow key="3">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
-          </TableCell>
-          <TableCell>
-            <label htmlFor="" className="px-10">
-              0
-            </label>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -144,8 +139,13 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
+            </label>
+          </TableCell>
+          <TableCell>
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell className="hidden">Active</TableCell>
@@ -157,15 +157,10 @@ const Forma = () => {
         {/* Строка 4  */}
         <TableRow key="4">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
-          </TableCell>
-          <TableCell>
-            <label htmlFor="" className="px-10">
-              0
-            </label>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -173,8 +168,13 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
+            </label>
+          </TableCell>
+          <TableCell>
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell className="hidden">Active</TableCell>
@@ -186,15 +186,10 @@ const Forma = () => {
         {/* Строка 5  */}
         <TableRow key="5">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
-          </TableCell>
-          <TableCell>
-            <label htmlFor="" className="px-10">
-              0
-            </label>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -202,8 +197,13 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
+            </label>
+          </TableCell>
+          <TableCell>
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell className="hidden">Active</TableCell>
@@ -215,15 +215,10 @@ const Forma = () => {
         {/* Строка 6  */}
         <TableRow key="6">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
-          </TableCell>
-          <TableCell>
-            <label htmlFor="" className="px-10">
-              0
-            </label>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -231,8 +226,13 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
+            </label>
+          </TableCell>
+          <TableCell>
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell className="hidden">Active</TableCell>
@@ -243,15 +243,10 @@ const Forma = () => {
         {/* Строка 7  */}
         <TableRow key="7">
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
-            <input className="bg-slate-200 w-20"></input>
-          </TableCell>
-          <TableCell>
-            <label htmlFor="" className="px-10">
-              0
-            </label>
+            <input type="tel" className="bg-slate-200 w-20"></input>
           </TableCell>
           <TableCell>
             <label htmlFor="" className="px-10">
@@ -259,8 +254,13 @@ const Forma = () => {
             </label>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
+            </label>
+          </TableCell>
+          <TableCell>
+            <label htmlFor="" className="">
+              <input type="tel" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
 
