@@ -55,7 +55,7 @@ function App() {
   return (
     <div>
       <div>
-        <header className="flex h-14 justify-between w-full items-center bg-gray-100">
+        <header className="flex h-20 justify-between w-full items-center bg-white ">
           <div>
             <Modal
               isOpen={isOpen}
@@ -108,15 +108,27 @@ function App() {
               </ModalContent>
             </Modal>
           </div>
-          <div className="flex gap-[10%] mr-[10%]">
+          <div className="flex w-full items-center h-full gap-[10%] justify-around border-b">
             <div>
-              <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="/" className="font-bold text-primary-500">
+                HOME
+              </RouterLink>
             </div>
             <div>
-              <RouterLink to="/about">About</RouterLink>
+              <RouterLink to="/about" className="font-bold text-primary-500">
+                ABOUT
+              </RouterLink>
             </div>
             <div>
-              <RouterLink to="/contact">Info</RouterLink>
+              <RouterLink to="/contact" className="font-bold text-primary-500">
+                INFO
+              </RouterLink>
+            </div>
+            <div>
+              {" "}
+              <RouterLink to="/contact" className="font-bold text-primary-500">
+                FORMULS
+              </RouterLink>
             </div>
           </div>
         </header>
@@ -147,7 +159,14 @@ function App() {
                         накачку и запишите разницу колен монометра в таблицу
                       </p>
                     </div>
-                    <Button onClick={() => setInfo(false)}>Готово</Button>
+                    <Button
+                      onClick={() => {
+                        setInfo(false);
+                        setRead(true);
+                      }}
+                    >
+                      Готово
+                    </Button>
                   </Card>
                 </div>
               )}
@@ -200,7 +219,7 @@ function App() {
                     variant="shadow"
                     onClick={() => {
                       setInfo(true);
-                      setRead(true);
+                      setRead(false);
                     }}
                     className="bg-orange-500"
                   >
