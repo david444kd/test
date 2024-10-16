@@ -19,6 +19,7 @@ import { Progress } from "@nextui-org/progress";
 import { useState, useEffect } from "react";
 import Forma from "./forma";
 function App() {
+  const [counter, setCounter] = useState(0);
   const { isOpen, onOpenChange } = useDisclosure();
   const [info, setInfo] = useState(false);
   const [read, setRead] = useState(false);
@@ -33,8 +34,23 @@ function App() {
     setLeft(left - Math.floor(Math.random() * 5));
   }
   function sbros() {
-    setRight(Math.floor(Math.random() * (56 - 52) + 52));
-    setLeft(Math.floor(Math.random() * (48 - 43) + 43));
+    if (counter === 0) {
+      if (left && right != 50) {
+        let pravo = Math.random() * (53 - 51) + 51;
+        let pravo1 = Number(pravo.toFixed(2));
+        let levo = Math.random() * (49 - 45) + 45;
+        let levo1 = Number(levo.toFixed(2));
+
+        setRight(pravo1);
+        setLeft(levo1);
+        setCounter(1);
+      }
+    }
+    if (counter === 1) {
+      setRight(50);
+      setLeft(50);
+      setCounter(0);
+    }
   }
   return (
     <div>
@@ -152,10 +168,10 @@ function App() {
                     value={left}
                     className="max-w-xs"
                   />
-                  <p className="rotate-90 text-center">{left}</p>
+                  <p className="rotate-90 text-center mt-6">{left}</p>
                 </div>
                 <div className="-rotate-90 mt-[30%]">
-                  <p className="rotate-90 text-center">{right}</p>
+                  <p className="rotate-90 text-center mb-6">{right}</p>
                   <Progress
                     aria-label="Loading..."
                     value={right}
