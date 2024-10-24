@@ -19,21 +19,79 @@ import { Progress } from "@nextui-org/progress";
 import { useState, useEffect } from "react";
 import Forma from "./forma";
 function App() {
+  const [countRows, setCountRows] = useState(1);
   const [counter, setCounter] = useState(0);
   const { isOpen, onOpenChange } = useDisclosure();
   const [info, setInfo] = useState(false);
   const [read, setRead] = useState(false);
   const [right, setRight] = useState(50);
   const [left, setLeft] = useState(50);
+
   useEffect(() => {
     onOpenChange();
   }, []);
 
   function upGrade() {
-    setRight(right + Math.floor(Math.random() * 5));
-    setLeft(left - Math.floor(Math.random() * 5));
+    let row1_h1: Element | null = document.querySelector("#row1_h1");
+    let row2_h1: Element | null = document.querySelector("#row2_h1");
+    let row3_h1: Element | null = document.querySelector("#row3_h1");
+    let row4_h1: Element | null = document.querySelector("#row4_h1");
+    let row5_h1: Element | null = document.querySelector("#row5_h1");
+    let row6_h1: Element | null = document.querySelector("#row6_h1");
+    let row7_h1: Element | null = document.querySelector("#row7_h1");
+    if (
+      row1_h1 &&
+      row2_h1 &&
+      row3_h1 &&
+      row4_h1 &&
+      row5_h1 &&
+      row6_h1 &&
+      row7_h1
+    ) {
+      let r = right + Math.floor(Math.random() * 5);
+      let l = left - Math.floor(Math.random() * 5);
+      setRight(r);
+      setLeft(l);
+      let value = r - l;
+      if (countRows == 1) {
+        row1_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+      if (countRows == 2) {
+        row2_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+      if (countRows == 3) {
+        row3_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+      if (countRows == 4) {
+        row4_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+      if (countRows == 5) {
+        row5_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+      if (countRows == 6) {
+        row6_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+      if (countRows == 7) {
+        row7_h1.textContent = value.toString();
+        console.log(countRows);
+      }
+    }
   }
   function sbros() {
+    let row1_h2: Element | null = document.querySelector("#row1_h2");
+    let row2_h2: Element | null = document.querySelector("#row2_h2");
+    let row3_h2: Element | null = document.querySelector("#row3_h2");
+    let row4_h2: Element | null = document.querySelector("#row4_h2");
+    let row5_h2: Element | null = document.querySelector("#row5_h2");
+    let row6_h2: Element | null = document.querySelector("#row6_h2");
+    let row7_h2: Element | null = document.querySelector("#row7_h2");
+
     if (counter === 0) {
       if (left && right != 50) {
         let pravo = Math.random() * (53 - 51) + 51;
@@ -43,6 +101,43 @@ function App() {
 
         setRight(pravo1);
         setLeft(levo1);
+
+        let distance = pravo1 - levo1;
+        distance = Number(distance.toFixed(2));
+        if (
+          row1_h2 &&
+          row2_h2 &&
+          row3_h2 &&
+          row4_h2 &&
+          row5_h2 &&
+          row6_h2 &&
+          row7_h2
+        ) {
+          if (countRows == 1) {
+            row1_h2.textContent = distance.toString();
+          }
+          if (countRows == 2) {
+            row2_h2.textContent = distance.toString();
+          }
+          if (countRows == 3) {
+            row3_h2.textContent = distance.toString();
+          }
+          if (countRows == 4) {
+            row4_h2.textContent = distance.toString();
+          }
+          if (countRows == 5) {
+            row5_h2.textContent = distance.toString();
+          }
+          if (countRows == 6) {
+            row6_h2.textContent = distance.toString();
+          }
+          if (countRows == 7) {
+            row7_h2.textContent = distance.toString();
+          }
+          // row1_h2.textContent = distance.toString();
+        }
+        console.log(distance);
+
         setCounter(1);
       }
     }
@@ -50,7 +145,58 @@ function App() {
       setRight(50);
       setLeft(50);
       setCounter(0);
+      setCountRows(countRows + 1);
     }
+  }
+  function remake() {
+    let row1_h1: Element | null = document.querySelector("#row1_h1");
+    let row2_h1: Element | null = document.querySelector("#row2_h1");
+    let row3_h1: Element | null = document.querySelector("#row3_h1");
+    let row4_h1: Element | null = document.querySelector("#row4_h1");
+    let row5_h1: Element | null = document.querySelector("#row5_h1");
+    let row6_h1: Element | null = document.querySelector("#row6_h1");
+    let row7_h1: Element | null = document.querySelector("#row7_h1");
+
+    let row1_h2: Element | null = document.querySelector("#row1_h2");
+    let row2_h2: Element | null = document.querySelector("#row2_h2");
+    let row3_h2: Element | null = document.querySelector("#row3_h2");
+    let row4_h2: Element | null = document.querySelector("#row4_h2");
+    let row5_h2: Element | null = document.querySelector("#row5_h2");
+    let row6_h2: Element | null = document.querySelector("#row6_h2");
+    let row7_h2: Element | null = document.querySelector("#row7_h2");
+    if (
+      row1_h1 &&
+      row2_h1 &&
+      row3_h1 &&
+      row4_h1 &&
+      row5_h1 &&
+      row6_h1 &&
+      row7_h1 &&
+      row1_h2 &&
+      row2_h2 &&
+      row3_h2 &&
+      row4_h2 &&
+      row5_h2 &&
+      row6_h2 &&
+      row7_h2
+    ) {
+      row1_h1.textContent = "";
+      row2_h1.textContent = "";
+      row3_h1.textContent = "";
+      row4_h1.textContent = "";
+      row5_h1.textContent = "";
+      row6_h1.textContent = "";
+      row7_h1.textContent = "";
+
+      row1_h2.textContent = "";
+      row2_h2.textContent = "";
+      row3_h2.textContent = "";
+      row4_h2.textContent = "";
+      row5_h2.textContent = "";
+      row6_h2.textContent = "";
+      row7_h2.textContent = "";
+    }
+    setCountRows(1);
   }
   return (
     <div>
@@ -140,7 +286,7 @@ function App() {
           element={
             <>
               {info && (
-                <div className="absolute w-screen h-screen z-50 bg-default-100">
+                <div className="absolute w-screen left-0 right-0 h-screen sm:h-[100vw] z-50 bg-default-100">
                   <Card className="p-8 top-[10%] m-4 py-10">
                     <div className="flex flex-col gap-4 mb-2">
                       <h1 className="text-xl">Подготовка к эксперименту:</h1>
@@ -207,12 +353,21 @@ function App() {
                       >
                         Насос
                       </Button>
-                      <Button
-                        onClick={sbros}
-                        className="bg-gray-400 border w-1/2"
-                      >
-                        Клапан
-                      </Button>
+                      {countRows == 8 ? (
+                        <Button
+                          onClick={remake}
+                          className="bg-gray-400 border w-1/2"
+                        >
+                          Начать заново
+                        </Button>
+                      ) : (
+                        <Button
+                          onClick={sbros}
+                          className="bg-gray-400 border w-1/2"
+                        >
+                          Клапан
+                        </Button>
+                      )}
                     </div>
                   )}
                   <Button

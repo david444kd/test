@@ -20,7 +20,7 @@ const Forma = () => {
   return (
     <Table aria-label="Example static collection table" className="">
       <TableHeader>
-        <TableColumn>
+        <TableColumn className="">
           <Formula1></Formula1>
         </TableColumn>
         <TableColumn>
@@ -53,14 +53,24 @@ const Forma = () => {
         {/* Строка 1  */}
         <TableRow key="1" className="">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            {/* <input
+              type=""
+              className="bg-slate-200 w-20"
+              placeholder="h1"
+            ></input> */}
+            <p id="row1_h1" className="w-10"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            {/* <input
+              type=""
+              className="bg-slate-200 w-20"
+              placeholder="h2"
+            ></input> */}
+            <p id="row1_h2" className="w-10"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
@@ -99,14 +109,14 @@ const Forma = () => {
         {/* Строка 2  */}
         <TableRow key="2">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row2_h1"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row2_h2"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
@@ -128,14 +138,14 @@ const Forma = () => {
         {/* Строка 3  */}
         <TableRow key="3">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row3_h1"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row3_h2"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
@@ -157,14 +167,14 @@ const Forma = () => {
         {/* Строка 4  */}
         <TableRow key="4">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row4_h1"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row4_h2"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
@@ -186,14 +196,14 @@ const Forma = () => {
         {/* Строка 5  */}
         <TableRow key="5">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row5_h1"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row5_h2"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
@@ -215,14 +225,14 @@ const Forma = () => {
         {/* Строка 6  */}
         <TableRow key="6">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row6_h1"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row6_h2"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
@@ -243,14 +253,14 @@ const Forma = () => {
         {/* Строка 7  */}
         <TableRow key="7">
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p id="row7_h1"></p>
           </TableCell>
           <TableCell>
-            <input type="" className="bg-slate-200 w-20"></input>
+            <p className="" id="row7_h2"></p>
           </TableCell>
           <TableCell>
-            <label htmlFor="" className="px-10">
-              0
+            <label htmlFor="" className="">
+              <input type="" className="bg-slate-200 w-20"></input>
             </label>
           </TableCell>
           <TableCell>
