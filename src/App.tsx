@@ -210,64 +210,62 @@ function App() {
     setCountRows(1);
   }
   return (
-    <div>
-      <div>
-        <header className="flex bg-opacity-90 fixed h-16 justify-between w-full items-center bg-white ">
-          <div>
-            <Modal
-              isOpen={isOpen}
-              onOpenChange={onOpenChange}
-              size="xs"
-              className="m-auto"
-            >
-              <ModalContent>
-                {(onClose) => (
-                  <>
-                    <ModalHeader className="flex flex-col gap-1 text-primary-500">
-                      Что нужно знать перед началом эксперимента
-                    </ModalHeader>
-                    <ModalBody>
-                      <p className="text-default-600">
-                        Добро пожаловать в виртуальную лабораторную работу по
-                        определению теплоёмкостей Cp и Cv методом
-                        Клемана-Дезорма! Здесь вы сможете провести эксперимент
-                        по определению теплоёмкостей газа при постоянном
-                        давлении и объёме с помощью классического метода.
-                      </p>
-                      <p className="text-primary-500">Обратите внимание:</p>
-                      <ul className="flex flex-col gap-1">
-                        <li className="text-default-600">
-                          1) Формулы, необходимые для расчётов, вы можете найти
-                          в меню, выбрав соответствующий пункт.
-                        </li>
-                        <li className="text-default-600">
-                          2) Подробную информацию о выполнении эксперимента
-                          также можно найти в меню.
-                        </li>
-                        <li className="text-default-600">
-                          3) Если у вас возникнут вопросы, комментарии или
-                          предложения, посетите раздел с информацией об авторах
-                          и контактами, который также находится в меню.
-                        </li>
-                      </ul>
-                      <p>
-                        Нажмите "Начать эксперимент", чтобы приступить к
-                        выполнению. Желаем успехов!
-                      </p>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button color="primary" onClick={onClose}>
-                        Начать эксперимент!
-                      </Button>
-                    </ModalFooter>
-                  </>
-                )}
-              </ModalContent>
-            </Modal>
-          </div>
-          <div className="flex  items-center px-5 h-full gap-[10%] justify-end  ">
+    <div className="max-w-lg">
+      <div className="w-full flex justify-end bg-white h-16 opacity-75">
+        <header className="flex fixed h-16 justify-end items-center w-full bg-white">
+          <Modal
+            isOpen={isOpen}
+            onOpenChange={onOpenChange}
+            size="xs"
+            className="m-auto"
+          >
+            <ModalContent>
+              {(onClose) => (
+                <>
+                  <ModalHeader className="flex flex-col gap-1 text-primary-500">
+                    Что нужно знать перед началом эксперимента
+                  </ModalHeader>
+                  <ModalBody>
+                    <p className="text-default-600">
+                      Добро пожаловать в виртуальную лабораторную работу по
+                      определению теплоёмкостей Cp и Cv методом Клемана-Дезорма!
+                      Здесь вы сможете провести эксперимент по определению
+                      теплоёмкостей газа при постоянном давлении и объёме с
+                      помощью классического метода.
+                    </p>
+                    <p className="text-primary-500">Обратите внимание:</p>
+                    <ul className="flex flex-col gap-1">
+                      <li className="text-default-600">
+                        1) Формулы, необходимые для расчётов, вы можете найти в
+                        меню, выбрав соответствующий пункт.
+                      </li>
+                      <li className="text-default-600">
+                        2) Подробную информацию о выполнении эксперимента также
+                        можно найти в меню.
+                      </li>
+                      <li className="text-default-600">
+                        3) Если у вас возникнут вопросы, комментарии или
+                        предложения, посетите раздел с информацией об авторах и
+                        контактами, который также находится в меню.
+                      </li>
+                    </ul>
+                    <p>
+                      Нажмите "Начать эксперимент", чтобы приступить к
+                      выполнению. Желаем успехов!
+                    </p>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="primary" onClick={onClose}>
+                      Начать эксперимент!
+                    </Button>
+                  </ModalFooter>
+                </>
+              )}
+            </ModalContent>
+          </Modal>
+          <div className="flex  items-center px-5 h-full gap-[10%] justify-center w-full  ">
             <Sheet>
-              <SheetTrigger className="flex items-center gap-2 font-bold text-lg ">
+              <SheetTrigger className="flex items-center gap-2 font-bold text-lg w-full  justify-end">
                 Меню <MenuSvg />
               </SheetTrigger>
               <SheetContent>
@@ -326,8 +324,8 @@ function App() {
           element={
             <>
               {info && (
-                <div className="absolute w-screen left-0 right-0 h-screen sm:h-[100vw] z-50 bg-default-100">
-                  <Card className="p-8 top-[10%] m-4 py-10">
+                <div className="absolute flex w-screen left-0 right-0 h-full items-center justify-center z-50 bg-default-100">
+                  <Card className="p-8  m-4 py-10 max-w-lg ">
                     <div className="flex flex-col gap-4 mb-2">
                       <h1 className="text-xl">Подготовка к эксперименту:</h1>
                       <p className="text-default-600">
@@ -357,7 +355,7 @@ function App() {
                 </div>
               )}
 
-              <div className="flex justify-center pt-16">
+              <div className="flex justify-center ">
                 <ReactPlayer
                   light
                   url="https://www.youtube.com/watch?v=6eOeCTrqzaw&list=PL1Bo7M-lmlwRKLIHzHPSWiXpF6k0eh7ON&index=3&pp=gAQBiAQB"
@@ -366,7 +364,7 @@ function App() {
                   // playIcon={}
                 />
               </div>
-              <div className="grid grid-cols-2  h-[90vw] items-center justify-center">
+              <div className="grid grid-cols-2 py-20 h-full items-center justify-center">
                 <div className="-rotate-90 mt-[30%]">
                   <Progress
                     aria-label="Loading..."

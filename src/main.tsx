@@ -9,10 +9,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <NextUIProvider>
       <Router>
-        <div className="w-full h-full justify-center items-center sm:flex">
-          <div className="h-screen">
-            <App />
-          </div>
+        <div className="w-full justify-center items-center sm:flex">
+          <App />
         </div>
       </Router>
     </NextUIProvider>
