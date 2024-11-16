@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pt-16">
       <div className="w-full p-5 h-[90%]">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere at
         laboriosam ipsa, nihil officiis exercitationem atque mollitia

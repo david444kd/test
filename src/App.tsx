@@ -6,18 +6,30 @@ import {
   ModalBody,
   Modal,
   useDisclosure,
-  Button,
   Card,
 } from "@nextui-org/react";
-// import ReactPlayer from "react-player";
+
 import ReactPlayer from "react-player/youtube";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "./components/ui/sheet";
 
 import "./App.css";
 import About from "./about";
 import Contact from "./contact";
+
 import { Progress } from "@nextui-org/progress";
 import { useState, useEffect } from "react";
 import Forma from "./forma";
+import { Button } from "./components/ui/button";
+import MenuSvg from "./components/menuSvg";
+import Formuls from "./formuls";
 function App() {
   const [countRows, setCountRows] = useState(1);
   const [counter, setCounter] = useState(0);
@@ -134,7 +146,6 @@ function App() {
           if (countRows == 7) {
             row7_h2.textContent = distance.toString();
           }
-          // row1_h2.textContent = distance.toString();
         }
         console.log(distance);
 
@@ -201,7 +212,7 @@ function App() {
   return (
     <div>
       <div>
-        <header className="flex h-20 justify-between w-full items-center bg-white ">
+        <header className="flex bg-opacity-90 fixed h-16 justify-between w-full items-center bg-white ">
           <div>
             <Modal
               isOpen={isOpen}
@@ -245,7 +256,7 @@ function App() {
                       </p>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="primary" onPress={onClose}>
+                      <Button color="primary" onClick={onClose}>
                         Начать эксперимент!
                       </Button>
                     </ModalFooter>
@@ -254,28 +265,57 @@ function App() {
               </ModalContent>
             </Modal>
           </div>
-          <div className="flex w-full items-center h-full gap-[10%] justify-around border-b">
-            <div>
-              <RouterLink to="/" className="font-bold text-primary-500">
-                HOME
-              </RouterLink>
-            </div>
-            <div>
-              <RouterLink to="/about" className="font-bold text-primary-500">
-                ABOUT
-              </RouterLink>
-            </div>
-            <div>
-              <RouterLink to="/contact" className="font-bold text-primary-500">
-                INFO
-              </RouterLink>
-            </div>
-            <div>
-              {" "}
-              <RouterLink to="/contact" className="font-bold text-primary-500">
-                FORMULS
-              </RouterLink>
-            </div>
+          <div className="flex  items-center px-5 h-full gap-[10%] justify-end  ">
+            <Sheet>
+              <SheetTrigger className="flex items-center gap-2 font-bold text-lg ">
+                Меню <MenuSvg />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Меню</SheetTitle>
+                  <SheetDescription>
+                    Обязательно перед использованием посетите все вкладки меню
+                  </SheetDescription>
+                  <div className="flex justify-start flex-col">
+                    <SheetClose asChild>
+                      <RouterLink
+                        to="/"
+                        className="font-bold text-primary-500 flex justify-start"
+                      >
+                        HOME
+                      </RouterLink>
+                    </SheetClose>
+
+                    <SheetClose asChild>
+                      <RouterLink
+                        to="/about"
+                        className="font-bold text-primary-500 flex justify-start"
+                      >
+                        ABOUT
+                      </RouterLink>
+                    </SheetClose>
+
+                    <SheetClose asChild>
+                      <RouterLink
+                        to="/contact"
+                        className="font-bold text-primary-500 flex justify-start"
+                      >
+                        INFO
+                      </RouterLink>
+                    </SheetClose>
+
+                    <SheetClose asChild>
+                      <RouterLink
+                        to="/formuls"
+                        className="font-bold text-primary-500 flex justify-start"
+                      >
+                        FORMULS
+                      </RouterLink>
+                    </SheetClose>
+                  </div>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
           </div>
         </header>
       </div>
@@ -317,10 +357,10 @@ function App() {
                 </div>
               )}
 
-              <div className="flex justify-center">
+              <div className="flex justify-center pt-16">
                 <ReactPlayer
                   light
-                  url="https://youtu.be/c9DIoSNoQNs?si=xmIniMwsckxlj-k1"
+                  url="https://www.youtube.com/watch?v=6eOeCTrqzaw&list=PL1Bo7M-lmlwRKLIHzHPSWiXpF6k0eh7ON&index=3&pp=gAQBiAQB"
                   controls
                   playing
                   // playIcon={}
@@ -361,22 +401,18 @@ function App() {
                           Начать заново
                         </Button>
                       ) : (
-                        <Button
-                          onClick={sbros}
-                          className="bg-gray-400 border w-1/2"
-                        >
+                        <Button variant="destructive" onClick={sbros}>
                           Клапан
                         </Button>
                       )}
                     </div>
                   )}
                   <Button
-                    variant="shadow"
+                    variant="outline"
                     onClick={() => {
                       setInfo(true);
                       setRead(false);
                     }}
-                    className="bg-orange-500"
                   >
                     Прочитать инструкции
                   </Button>
@@ -386,9 +422,10 @@ function App() {
             </>
           }
         />
-        {/* <Route path="/form" element={<Fjkd />} /> */}
+
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/formuls" element={<Formuls />} />
       </Routes>
     </div>
   );

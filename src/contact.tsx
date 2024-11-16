@@ -2,7 +2,7 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 
 const Contact = () => {
   return (
-    <div className="flex justify-center p-9">
+    <div className="flex justify-center p-9 pt-16">
       <Accordion variant="light">
         <AccordionItem
           key="1"
