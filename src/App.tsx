@@ -209,197 +209,202 @@ function App() {
     }
     setCountRows(1);
   }
+
   return (
-    <div className="max-w-lg">
-      <div className="w-full flex justify-end bg-white h-16 opacity-75">
-        <header className="flex fixed h-16 justify-end items-center w-full bg-white">
-          <Modal
-            isOpen={isOpen}
-            onOpenChange={onOpenChange}
-            size="xs"
-            className="m-auto"
-          >
-            <ModalContent>
-              {(onClose) => (
-                <>
-                  <ModalHeader className="flex flex-col gap-1 text-primary-500">
-                    Что нужно знать перед началом эксперимента
-                  </ModalHeader>
-                  <ModalBody>
-                    <p className="text-default-600">
-                      Добро пожаловать в виртуальную лабораторную работу по
-                      определению теплоёмкостей Cp и Cv методом Клемана-Дезорма!
-                      Здесь вы сможете провести эксперимент по определению
-                      теплоёмкостей газа при постоянном давлении и объёме с
-                      помощью классического метода.
-                    </p>
-                    <p className="text-primary-500">Обратите внимание:</p>
-                    <ul className="flex flex-col gap-1">
-                      <li className="text-default-600">
-                        1) Формулы, необходимые для расчётов, вы можете найти в
-                        меню, выбрав соответствующий пункт.
-                      </li>
-                      <li className="text-default-600">
-                        2) Подробную информацию о выполнении эксперимента также
-                        можно найти в меню.
-                      </li>
-                      <li className="text-default-600">
-                        3) Если у вас возникнут вопросы, комментарии или
-                        предложения, посетите раздел с информацией об авторах и
-                        контактами, который также находится в меню.
-                      </li>
-                    </ul>
-                    <p>
-                      Нажмите "Начать эксперимент", чтобы приступить к
-                      выполнению. Желаем успехов!
-                    </p>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button color="primary" onClick={onClose}>
-                      Начать эксперимент!
-                    </Button>
-                  </ModalFooter>
-                </>
-              )}
-            </ModalContent>
-          </Modal>
-          <div className="flex  items-center px-5 h-full gap-[10%] justify-center w-full  ">
-            <Sheet>
-              <SheetTrigger className="flex items-center gap-2 font-bold text-lg w-full  justify-end">
-                Меню <MenuSvg />
-              </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>Меню</SheetTitle>
-                  <SheetDescription>
-                    Обязательно перед использованием посетите все вкладки меню
-                  </SheetDescription>
-                  <div className="flex justify-start flex-col">
-                    <SheetClose asChild>
-                      <RouterLink
-                        to="/"
-                        className="font-bold text-primary-500 flex justify-start"
-                      >
-                        HOME
-                      </RouterLink>
-                    </SheetClose>
-
-                    <SheetClose asChild>
-                      <RouterLink
-                        to="/about"
-                        className="font-bold text-primary-500 flex justify-start"
-                      >
-                        ABOUT
-                      </RouterLink>
-                    </SheetClose>
-
-                    <SheetClose asChild>
-                      <RouterLink
-                        to="/contact"
-                        className="font-bold text-primary-500 flex justify-start"
-                      >
-                        INFO
-                      </RouterLink>
-                    </SheetClose>
-
-                    <SheetClose asChild>
-                      <RouterLink
-                        to="/formuls"
-                        className="font-bold text-primary-500 flex justify-start"
-                      >
-                        FORMULS
-                      </RouterLink>
-                    </SheetClose>
-                  </div>
-                </SheetHeader>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </header>
-      </div>
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              {info && (
-                <div className="absolute flex w-screen left-0 right-0 h-full items-center justify-center z-50 bg-default-100">
-                  <Card className="p-8  m-4 py-10 max-w-lg ">
-                    <div className="flex flex-col gap-4 mb-2">
-                      <h1 className="text-xl">Подготовка к эксперименту:</h1>
-                      <p className="text-default-600">
-                        Перед началом работы убедитесь, что параметры установки
-                        находятся на исходных значениях, которые отображаются в
-                        соответствующих полях интерфейса.
-                      </p>
-                      <h1 className="text-xl">Нагнетание давления:</h1>
-                      <p className="text-default-600">
-                        Нажмите кнопку "Насос" для увеличения давления в
-                        системе.
-                      </p>
-                      <p className="text-default-600">
-                        Как только достигнуто нужное давление, остановите
-                        накачку и запишите разницу колен монометра в таблицу
-                      </p>
-                    </div>
-                    <Button
-                      onClick={() => {
-                        setInfo(false);
-                        setRead(true);
-                      }}
+    <div className="min-h-screen w-full bg-white">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 h-16 bg-white/75 backdrop-blur-sm z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-end">
+          <Sheet>
+            <SheetTrigger className="inline-flex items-center gap-2 font-bold text-lg">
+              Меню <MenuSvg />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Меню</SheetTitle>
+                <SheetDescription>
+                  Обязательно перед использованием посетите все вкладки меню
+                </SheetDescription>
+                <nav className="flex flex-col gap-4 mt-6">
+                  <SheetClose asChild>
+                    <RouterLink
+                      to="/"
+                      className="font-bold text-primary-500 hover:opacity-80"
                     >
-                      Готово
-                    </Button>
-                  </Card>
-                </div>
-              )}
+                      HOME
+                    </RouterLink>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <RouterLink
+                      to="/about"
+                      className="font-bold text-primary-500 hover:opacity-80"
+                    >
+                      ABOUT
+                    </RouterLink>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <RouterLink
+                      to="/contact"
+                      className="font-bold text-primary-500 hover:opacity-80"
+                    >
+                      INFO
+                    </RouterLink>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <RouterLink
+                      to="/formuls"
+                      className="font-bold text-primary-500 hover:opacity-80"
+                    >
+                      FORMULS
+                    </RouterLink>
+                  </SheetClose>
+                </nav>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </header>
 
-              <div className="flex justify-center ">
-                <ReactPlayer
-                  light
-                  url="https://www.youtube.com/watch?v=6eOeCTrqzaw&list=PL1Bo7M-lmlwRKLIHzHPSWiXpF6k0eh7ON&index=3&pp=gAQBiAQB"
-                  controls
-                  playing
-                  // playIcon={}
-                />
-              </div>
-              <div className="grid grid-cols-2 py-20 h-full items-center justify-center">
-                <div className="-rotate-90 mt-[30%]">
-                  <Progress
-                    aria-label="Loading..."
-                    value={left}
-                    className="max-w-xs"
+      {/* Main Content */}
+      <main className="pt-16 pb-8 px-4 max-w-7xl mx-auto">
+        <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="xs">
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1 text-primary-500">
+                  Что нужно знать перед началом эксперимента
+                </ModalHeader>
+                <ModalBody>
+                  <p className="text-default-600">
+                    Добро пожаловать в виртуальную лабораторную работу по
+                    определению теплоёмкостей Cp и Cv методом Клемана-Дезорма!
+                    Здесь вы сможете провести эксперимент по определению
+                    теплоёмкостей газа при постоянном давлении и объёме с
+                    помощью классического метода.
+                  </p>
+                  <p className="text-primary-500">Обратите внимание:</p>
+                  <ul className="flex flex-col gap-1">
+                    <li className="text-default-600">
+                      1) Формулы, необходимые для расчётов, вы можете найти в
+                      меню, выбрав соответствующий пункт.
+                    </li>
+                    <li className="text-default-600">
+                      2) Подробную информацию о выполнении эксперимента также
+                      можно найти в меню.
+                    </li>
+                    <li className="text-default-600">
+                      3) Если у вас возникнут вопросы, комментарии или
+                      предложения, посетите раздел с информацией об авторах и
+                      контактами, который также находится в меню.
+                    </li>
+                  </ul>
+                  <p>
+                    Нажмите "Начать эксперимент", чтобы приступить к выполнению.
+                    Желаем успехов!
+                  </p>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="primary" onClick={onClose}>
+                    Начать эксперимент!
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="space-y-8">
+                {/* Info Overlay */}
+                {info && (
+                  <div className="fixed inset-0 bg-default-100 z-50 flex items-center justify-center p-4">
+                    <Card className="max-w-lg w-full p-6">
+                      <div className="flex flex-col gap-4 mb-2">
+                        <h1 className="text-xl">Подготовка к эксперименту:</h1>
+                        <p className="text-default-600">
+                          Перед началом работы убедитесь, что параметры
+                          установки находятся на исходных значениях, которые
+                          отображаются в соответствующих полях интерфейса.
+                        </p>
+                        <h1 className="text-xl">Нагнетание давления:</h1>
+                        <p className="text-default-600">
+                          Нажмите кнопку "Насос" для увеличения давления в
+                          системе.
+                        </p>
+                        <p className="text-default-600">
+                          Как только достигнуто нужное давление, остановите
+                          накачку и запишите разницу колен монометра в таблицу
+                        </p>
+                      </div>
+                      <Button
+                        onClick={() => {
+                          setInfo(false);
+                          setRead(true);
+                        }}
+                        className="mt-6"
+                      >
+                        Готово
+                      </Button>
+                    </Card>
+                  </div>
+                )}
+
+                {/* Video Player */}
+                <div className="aspect-video w-full max-w-2xl mx-auto">
+                  <ReactPlayer
+                    url="https://www.youtube.com/watch?v=6eOeCTrqzaw&list=PL1Bo7M-lmlwRKLIHzHPSWiXpF6k0eh7ON&index=3&pp=gAQBiAQB"
+                    controls
+                    width="100%"
+                    height="100%"
+                    light
+                    playing
                   />
-                  <p className="rotate-90 text-center mt-6">{left}</p>
                 </div>
-                <div className="-rotate-90 mt-[30%]">
-                  <p className="rotate-90 text-center mb-6">{right}</p>
-                  <Progress
-                    aria-label="Loading..."
-                    value={right}
-                    className="max-w-xs"
-                  />
-                </div>
-                <div className="col-span-2 justify-center flex flex-col w-[50%] m-auto gap-4">
+
+                <main className="min-h-60 flex items-center justify-center">
+                  <div className="grid grid-cols-2 gap-8 items-center w-full max-w-2xl px-4">
+                    <div className="flex items-center justify-center">
+                      <div className="transform -rotate-90 w-48">
+                        <p className="text-center rotate-90 mb-5">{left}</p>
+                        <Progress value={left} className="h-2" />
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <div className="transform -rotate-90 w-48">
+                        <Progress value={right} className="h-2" />
+                        <p className="text-center rotate-90 mt-5">{right}</p>
+                      </div>
+                    </div>
+                  </div>
+                </main>
+
+                {/* Controls */}
+                <div className="max-w-md mx-auto space-y-4">
                   {read && (
-                    <div className="flex m-auto gap-3">
+                    <div className="flex gap-4">
                       <Button
                         color="primary"
                         onClick={upGrade}
-                        className="w-1/2"
+                        className="flex-1"
                       >
                         Насос
                       </Button>
                       {countRows == 8 ? (
                         <Button
                           onClick={remake}
-                          className="bg-gray-400 border w-1/2"
+                          className="flex-1 bg-gray-400 border"
                         >
                           Начать заново
                         </Button>
                       ) : (
-                        <Button variant="destructive" onClick={sbros}>
+                        <Button
+                          variant="destructive"
+                          onClick={sbros}
+                          className="flex-1"
+                        >
                           Клапан
                         </Button>
                       )}
@@ -411,20 +416,22 @@ function App() {
                       setInfo(true);
                       setRead(false);
                     }}
+                    className="w-full"
                   >
                     Прочитать инструкции
                   </Button>
                 </div>
-              </div>
-              {read && <Forma></Forma>}
-            </>
-          }
-        />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/formuls" element={<Formuls />} />
-      </Routes>
+                {/* Form */}
+                {read && <Forma />}
+              </div>
+            }
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/formuls" element={<Formuls />} />
+        </Routes>
+      </main>
     </div>
   );
 }
