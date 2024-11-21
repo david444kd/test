@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Accordion, AccordionItem, Link } from "@nextui-org/react";
 
 const Contact = () => {
   return (
@@ -9,15 +9,21 @@ const Contact = () => {
           aria-label="Accordion 1"
           title="Контакты поддержки"
         >
-          <div>77777777777777777</div>
+          <div>
+            <p className="text-sm">Для вопросов и предложений к разработчику</p>
+            <Link href="https://t.me/pumba444">Telegram</Link>
+          </div>
         </AccordionItem>
-        <AccordionItem key="2" aria-label="Accordion 2" title="Авторы">
+        <AccordionItem key="2" aria-label="Accordion 2" title="Создатели">
           <div className="gap-3 flex flex-col">
-            <p className="text-default-600">
-              Старший преподаватель, магистр физики - Кузнецова Юлия
+            <p className="text-sm text-default-600">
+              Разработчик - Студент факультета инновационных технологий, группы
+              ИС - Кожахметов Д.М.
+            </p>
+            <p className="text-sm text-default-600">
+              Старший преподаватель, магистр естественных наук - Кузнецова Юлия
               Александровна
             </p>
-            <p className="text-default-600">Кожахметов Д.М.</p>
           </div>
         </AccordionItem>
       </Accordion>

@@ -231,7 +231,7 @@ function App() {
                       to="/"
                       className="font-bold text-primary-500 hover:opacity-80"
                     >
-                      HOME
+                      Домой
                     </RouterLink>
                   </SheetClose>
                   <SheetClose asChild>
@@ -239,7 +239,7 @@ function App() {
                       to="/about"
                       className="font-bold text-primary-500 hover:opacity-80"
                     >
-                      ABOUT
+                      Мануал
                     </RouterLink>
                   </SheetClose>
                   <SheetClose asChild>
@@ -247,17 +247,17 @@ function App() {
                       to="/contact"
                       className="font-bold text-primary-500 hover:opacity-80"
                     >
-                      INFO
+                      Информация
                     </RouterLink>
                   </SheetClose>
-                  <SheetClose asChild>
+                  {/* <SheetClose asChild>
                     <RouterLink
                       to="/formuls"
                       className="font-bold text-primary-500 hover:opacity-80"
                     >
                       FORMULS
                     </RouterLink>
-                  </SheetClose>
+                  </SheetClose> */}
                 </nav>
               </SheetHeader>
             </SheetContent>
@@ -267,35 +267,39 @@ function App() {
 
       {/* Main Content */}
       <main className="pt-16 pb-8 px-4 max-w-7xl mx-auto">
-        <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="xs">
+        <Modal
+          className="m-auto"
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          size="xs"
+        >
           <ModalContent>
             {(onClose) => (
               <>
-                <ModalHeader className="flex flex-col gap-1 text-primary-500">
+                <ModalHeader className="flex flex-col gap-1 font-bold">
                   Что нужно знать перед началом эксперимента
                 </ModalHeader>
                 <ModalBody>
-                  <p className="text-default-600">
+                  <p className="text-sm text-default-600">
                     Добро пожаловать в виртуальную лабораторную работу по
                     определению теплоёмкостей Cp и Cv методом Клемана-Дезорма!
                     Здесь вы сможете провести эксперимент по определению
                     теплоёмкостей газа при постоянном давлении и объёме с
                     помощью классического метода.
                   </p>
-                  <p className="text-primary-500">Обратите внимание:</p>
+                  <p className="font-bold">Обратите внимание:</p>
                   <ul className="flex flex-col gap-1">
-                    <li className="text-default-600">
-                      1) Формулы, необходимые для расчётов, вы можете найти в
-                      меню, выбрав соответствующий пункт.
+                    <li className="text-sm text-default-600">
+                      1) Подробный мануал с описанием всех этапов выполнения
+                      лабораторной работы вы можете прочесть в меню, пункт
+                      "Мануал"
                     </li>
-                    <li className="text-default-600">
-                      2) Подробную информацию о выполнении эксперимента также
-                      можно найти в меню.
-                    </li>
-                    <li className="text-default-600">
-                      3) Если у вас возникнут вопросы, комментарии или
-                      предложения, посетите раздел с информацией об авторах и
-                      контактами, который также находится в меню.
+
+                    <li className="text-sm text-default-600">
+                      2) Если у вас возникнут вопросы, комментарии или
+                      предложения, посетите раздел с информацией о создателях и
+                      контактами, который также находится в меню, пункт -
+                      "Информация".
                     </li>
                   </ul>
                   <p>
