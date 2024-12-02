@@ -31,6 +31,15 @@ import { Button } from "./components/ui/button";
 import MenuSvg from "./components/menuSvg";
 import Formuls from "./formuls";
 function App() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/theory.doc";
+    link.download = "theory.doc";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const [countRows, setCountRows] = useState(1);
   const [counter, setCounter] = useState(0);
   const { isOpen, onOpenChange } = useDisclosure();
@@ -214,7 +223,10 @@ function App() {
     <div className="min-h-screen w-full bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 h-16 bg-white/75 backdrop-blur-sm z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-end">
+        <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-end gap-5">
+          <div>
+            <Button onClick={handleDownload}>Загрузить теорию</Button>
+          </div>
           <Sheet>
             <SheetTrigger className="inline-flex items-center gap-2 font-bold text-lg">
               Меню <MenuSvg />
@@ -231,7 +243,7 @@ function App() {
                       to="/"
                       className="font-bold text-primary-500 hover:opacity-80"
                     >
-                      Домой
+                      Эксперимент
                     </RouterLink>
                   </SheetClose>
                   <SheetClose asChild>
@@ -239,7 +251,7 @@ function App() {
                       to="/about"
                       className="font-bold text-primary-500 hover:opacity-80"
                     >
-                      Мануал
+                      Руководство для выполнения
                     </RouterLink>
                   </SheetClose>
                   <SheetClose asChild>
@@ -250,6 +262,7 @@ function App() {
                       Информация
                     </RouterLink>
                   </SheetClose>
+
                   {/* <SheetClose asChild>
                     <RouterLink
                       to="/formuls"
