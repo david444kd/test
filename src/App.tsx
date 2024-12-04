@@ -237,7 +237,7 @@ function App() {
                 <SheetDescription>
                   Обязательно перед использованием посетите все вкладки меню
                 </SheetDescription>
-                <nav className="flex flex-col gap-4 mt-6">
+                <nav className="flex justify-start items-start flex-col gap-4 mt-6">
                   <SheetClose asChild>
                     <RouterLink
                       to="/"
